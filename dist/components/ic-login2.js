@@ -67,7 +67,7 @@ const IcLogin = /*@__PURE__*/ proxyCustomElement(class IcLogin extends HTMLEleme
     this.isFormValid = this.validateName() && this.validateEmail() && this.validateCheckbox();
   }
   render() {
-    return (h("form", { onSubmit: e => this.handleSubmit(e) }, h("h2", null, "Form Validation"), h("label", null, "Name:", h("input", { type: "text", value: this.name, onInput: e => this.handleNameChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.nameError } }, this.nameError)), h("label", null, "Email:", h("input", { type: "email", value: this.email, onInput: e => this.handleEmailChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.emailError } }, this.emailError)), h("label", null, h("input", { type: "checkbox", checked: this.checkbox, onChange: e => this.handleCheckboxChange(e) }), "I agree to the terms and conditions"), h("button", { type: "submit", disabled: !this.isFormValid }, "Submit")));
+    return (h("form", { onSubmit: e => this.handleSubmit(e) }, h("h2", null, "Form Validation"), h("label", null, "Name 2:", h("input", { type: "text", value: this.name, onInput: e => this.handleNameChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.nameError } }, this.nameError)), h("label", null, "Email:", h("input", { type: "email", value: this.email, onInput: e => this.handleEmailChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.emailError } }, this.emailError)), h("label", null, h("input", { type: "checkbox", checked: this.checkbox, onChange: e => this.handleCheckboxChange(e) }), "I agree to the terms and conditions"), h("button", { type: "submit", disabled: !this.isFormValid }, "Submit")));
   }
   static get style() { return icLoginCss; }
 }, [1, "ic-login", {
