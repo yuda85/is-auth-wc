@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface IcContainer {
+    }
+    interface IcLogin {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +26,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLIcContainerElement extends Components.IcContainer, HTMLStencilElement {
+    }
+    var HTMLIcContainerElement: {
+        prototype: HTMLIcContainerElement;
+        new (): HTMLIcContainerElement;
+    };
+    interface HTMLIcLoginElement extends Components.IcLogin, HTMLStencilElement {
+    }
+    var HTMLIcLoginElement: {
+        prototype: HTMLIcLoginElement;
+        new (): HTMLIcLoginElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +45,16 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ic-container": HTMLIcContainerElement;
+        "ic-login": HTMLIcLoginElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface IcContainer {
+    }
+    interface IcLogin {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +70,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "ic-container": IcContainer;
+        "ic-login": IcLogin;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +79,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ic-container": LocalJSX.IcContainer & JSXBase.HTMLAttributes<HTMLIcContainerElement>;
+            "ic-login": LocalJSX.IcLogin & JSXBase.HTMLAttributes<HTMLIcLoginElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
