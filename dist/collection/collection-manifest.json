@@ -1,0 +1,14 @@
+{
+  "entries": [
+    "components/ic-container/ic-container.js",
+    "components/ic-login/ic-login.js",
+    "components/my-component/my-component.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.0.2",
+    "typescriptVersion": "5.0.4"
+  },
+  "collections": [],
+  "bundles": []
+}

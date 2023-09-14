@@ -1,4 +1,8 @@
-import { r as registerInstance, h } from './index-edfa97ae.js';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const index = require('./index-4314db14.js');
 
 function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
@@ -8,7 +12,7 @@ const myComponentCss = ":host{display:block}";
 
 const MyComponent = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.first = undefined;
     this.middle = undefined;
     this.last = undefined;
@@ -17,11 +21,11 @@ const MyComponent = class {
     return format(this.first, this.middle, this.last);
   }
   render() {
-    return h("div", null, "Hello, World! I'm ", this.getText());
+    return index.h("div", null, "Hello, World! I'm ", this.getText());
   }
 };
 MyComponent.style = myComponentCss;
 
-export { MyComponent as my_component };
+exports.my_component = MyComponent;
 
-//# sourceMappingURL=my-component.entry.js.map
+//# sourceMappingURL=my-component.cjs.entry.js.map
