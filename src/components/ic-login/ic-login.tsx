@@ -77,7 +77,7 @@ export class IcLogin {
       <form onSubmit={e => this.handleSubmit(e)}>
         <h2>Form Validation</h2>
         <label>
-          Name 2:
+          Full Name:
           <input type="text" value={this.name} onInput={e => this.handleNameChange(e)} />
           <span class={{ 'error': true, 'error--active': !!this.nameError }}>{this.nameError}</span>
         </label>
