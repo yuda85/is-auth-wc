@@ -8,6 +8,7 @@ export class IcLogin {
     this.nameError = '';
     this.emailError = '';
     this.checkboxError = '';
+    this.name2 = 'judah';
   }
   validateName() {
     if (!this.name) {
@@ -61,7 +62,7 @@ export class IcLogin {
     this.isFormValid = this.validateName() && this.validateEmail() && this.validateCheckbox();
   }
   render() {
-    return (h("form", { onSubmit: e => this.handleSubmit(e) }, h("h2", null, "Form Validation"), h("label", null, "Full Name:", h("input", { type: "text", value: this.name, onInput: e => this.handleNameChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.nameError } }, this.nameError)), h("label", null, "Email:", h("input", { type: "email", value: this.email, onInput: e => this.handleEmailChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.emailError } }, this.emailError)), h("label", null, h("input", { type: "checkbox", checked: this.checkbox, onChange: e => this.handleCheckboxChange(e) }), "I agree to the terms and conditions"), h("button", { type: "submit", disabled: !this.isFormValid }, "Submit")));
+    return (h("form", { onSubmit: e => this.handleSubmit(e) }, h("h2", null, "Form Validation ", this.name2), h("label", null, "Full Name:", h("input", { type: "text", value: this.name, onInput: e => this.handleNameChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.nameError } }, this.nameError)), h("label", null, "Email:", h("input", { type: "email", value: this.email, onInput: e => this.handleEmailChange(e) }), h("span", { class: { 'error': true, 'error--active': !!this.emailError } }, this.emailError)), h("label", null, h("input", { type: "checkbox", checked: this.checkbox, onChange: e => this.handleCheckboxChange(e) }), "I agree to the terms and conditions"), h("button", { type: "submit", disabled: !this.isFormValid }, "Submit")));
   }
   static get is() { return "ic-login"; }
   static get encapsulation() { return "shadow"; }
@@ -73,6 +74,28 @@ export class IcLogin {
   static get styleUrls() {
     return {
       "$": ["ic-login.css"]
+    };
+  }
+  static get properties() {
+    return {
+      "name2": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": false,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": ""
+        },
+        "attribute": "name-2",
+        "reflect": false,
+        "defaultValue": "'judah'"
+      }
     };
   }
   static get states() {

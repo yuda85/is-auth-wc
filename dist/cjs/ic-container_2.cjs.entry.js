@@ -28,6 +28,7 @@ const IcLogin = class {
     this.nameError = '';
     this.emailError = '';
     this.checkboxError = '';
+    this.name2 = 'judah';
   }
   validateName() {
     if (!this.name) {
@@ -81,7 +82,7 @@ const IcLogin = class {
     this.isFormValid = this.validateName() && this.validateEmail() && this.validateCheckbox();
   }
   render() {
-    return (index.h("form", { onSubmit: e => this.handleSubmit(e) }, index.h("h2", null, "Form Validation"), index.h("label", null, "Full Name:", index.h("input", { type: "text", value: this.name, onInput: e => this.handleNameChange(e) }), index.h("span", { class: { 'error': true, 'error--active': !!this.nameError } }, this.nameError)), index.h("label", null, "Email:", index.h("input", { type: "email", value: this.email, onInput: e => this.handleEmailChange(e) }), index.h("span", { class: { 'error': true, 'error--active': !!this.emailError } }, this.emailError)), index.h("label", null, index.h("input", { type: "checkbox", checked: this.checkbox, onChange: e => this.handleCheckboxChange(e) }), "I agree to the terms and conditions"), index.h("button", { type: "submit", disabled: !this.isFormValid }, "Submit")));
+    return (index.h("form", { onSubmit: e => this.handleSubmit(e) }, index.h("h2", null, "Form Validation ", this.name2), index.h("label", null, "Full Name:", index.h("input", { type: "text", value: this.name, onInput: e => this.handleNameChange(e) }), index.h("span", { class: { 'error': true, 'error--active': !!this.nameError } }, this.nameError)), index.h("label", null, "Email:", index.h("input", { type: "email", value: this.email, onInput: e => this.handleEmailChange(e) }), index.h("span", { class: { 'error': true, 'error--active': !!this.emailError } }, this.emailError)), index.h("label", null, index.h("input", { type: "checkbox", checked: this.checkbox, onChange: e => this.handleCheckboxChange(e) }), "I agree to the terms and conditions"), index.h("button", { type: "submit", disabled: !this.isFormValid }, "Submit")));
   }
 };
 IcLogin.style = icLoginCss;

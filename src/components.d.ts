@@ -9,6 +9,7 @@ export namespace Components {
     interface IcContainer {
     }
     interface IcLogin {
+        "name2": string;
     }
     interface MyComponent {
         /**
@@ -54,6 +55,7 @@ declare namespace LocalJSX {
     interface IcContainer {
     }
     interface IcLogin {
+        "name2"?: string;
     }
     interface MyComponent {
         /**

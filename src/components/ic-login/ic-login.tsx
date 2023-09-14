@@ -1,4 +1,4 @@
-import { Component, State, h } from '@stencil/core';
+import { Component, Prop, State, h } from '@stencil/core';
 
 @Component({
   tag: 'ic-login',
@@ -13,6 +13,8 @@ export class IcLogin {
   @State() nameError: string = '';
   @State() emailError: string = '';
   @State() checkboxError: string = '';
+
+  @Prop() name2: string = 'judah';
 
   validateName() {
     if (!this.name) {
@@ -75,7 +77,7 @@ export class IcLogin {
   render() {
     return (
       <form onSubmit={e => this.handleSubmit(e)}>
-        <h2>Form Validation</h2>
+        <h2>Form Validation {this.name2}</h2>
         <label>
           Full Name:
           <input type="text" value={this.name} onInput={e => this.handleNameChange(e)} />

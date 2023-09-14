@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description | Type     | Default   |
+| -------- | --------- | ----------- | -------- | --------- |
+| `name2`  | `name-2`  |             | `string` | `'judah'` |
+
+
 ## Dependencies
 
 ### Used by
